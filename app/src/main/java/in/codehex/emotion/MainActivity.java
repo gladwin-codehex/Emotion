@@ -2,13 +2,13 @@ package in.codehex.emotion;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import in.codehex.emotion.db.DatabaseHandler;
 import in.codehex.emotion.util.Const;
@@ -16,7 +16,7 @@ import in.codehex.emotion.util.Const;
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private Button button;
-    private CoordinatorLayout coordinatorLayout;
+    private RelativeLayout mRelativeLayout;
     private FloatingActionButton fab;
     private Intent intent;
     private DatabaseHandler handler;
@@ -27,13 +27,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        if (toolbar != null) {
-            setSupportActionBar(toolbar);
-        }
+        setSupportActionBar(toolbar);
 
         handler = new DatabaseHandler(getApplicationContext());
 
-        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
+        mRelativeLayout = (RelativeLayout) findViewById(R.id.container);
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 if (checkPlaylist()) {
                     Intent intent = new Intent(MainActivity.this, EmotionDetectionActivity.class);
                     startActivity(intent);
-                } else Snackbar.make(coordinatorLayout,
+                } else Snackbar.make(mRelativeLayout,
                         "Add at least a song to each playlist", Snackbar.LENGTH_LONG).show();
             }
         });

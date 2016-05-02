@@ -11,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.SurfaceView;
-import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import java.util.List;
@@ -27,7 +26,6 @@ public class EmotionDetectionActivity extends AppCompatActivity implements Detec
     private SurfaceView surfaceView;
     private Toolbar toolbar;
     private DrawingView drawingView;
-    private ViewGroup activityLayout;
     private RelativeLayout mainLayout;
 
     @Override
@@ -36,13 +34,12 @@ public class EmotionDetectionActivity extends AppCompatActivity implements Detec
         setContentView(R.layout.activity_emotion_detection);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
-            setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
         mainLayout = (RelativeLayout) findViewById(R.id.main_layout);
-        activityLayout = (ViewGroup) findViewById(android.R.id.content);
         surfaceView = (SurfaceView) findViewById(R.id.camera);
         drawingView = (DrawingView) findViewById(R.id.drawing_view);
 
