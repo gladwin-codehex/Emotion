@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Music Tonic</string>
+    <string name="title_activity_songs_list">Songs List</string>
+    <string name="title_activity_playlist">Playlist</string>
+    <string name="title_activity_music_player">Music Player</string>
+    <string name="title_activity_emotion_detection">Emotion Detection</string>
+    <string name="snap">Take Snap</string>
+    <string name="camera">Camera</string>
+    <string name="cover">Album Cover Art</string>
+    <string name="song">Song Title</string>
+    <string name="play">Play Song</string>
+    <string name="stop">Stop Song</string>
+    <string name="skip_previous">Skip Previous</string>
+    <string name="skip_next">Skip Next</string>
+    <string name="splash">Splash Screen Image</string>
+</resources>
